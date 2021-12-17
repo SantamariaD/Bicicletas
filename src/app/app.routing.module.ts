@@ -4,7 +4,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
-import { ProductsComponent } from './views/products/products.component';
+import { ProductsComponent } from './views/products/components/products-components/products.component';
 
 const routes : Routes =[
 {
@@ -30,7 +30,7 @@ const routes : Routes =[
 },
 {
     path: 'products',
-    component: ProductsComponent
+    loadChildren: () => import('./views/products/products.module').then(m => m.ProductsModule)
 }
 
     ]
