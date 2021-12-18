@@ -15,6 +15,12 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule
+<<<<<<< HEAD
+=======
+  ],
+  exports: [
+    ProductsComponent
+>>>>>>> 218cf6c4a0065874dc27ffc0435183968135fa3b
   ]
 })
 export class ViewsModule { }

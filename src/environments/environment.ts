@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+<<<<<<< HEAD
   production: false,
   url_api : 'https://platzi-store.herokuapp.com/products/'
+=======
+  production: false
+>>>>>>> 218cf6c4a0065874dc27ffc0435183968135fa3b
 };
 
 /*
