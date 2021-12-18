@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app.routing.module';
 
 import { AppComponent } from './app.component';
 
@@ -21,14 +22,18 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
+import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appReducer } from './state';
 import { ViewsModule } from './views/views.module';
 import { environment } from 'src/environments/environment';
 
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+   
+  ],
   imports: [
     BrowserModule,
     StoreModule.forRoot(appReducer, {
@@ -59,6 +64,9 @@ import { environment } from 'src/environments/environment';
     MdbTooltipModule,
     MdbValidationModule,
     ViewsModule,
+    AppRoutingModule,
+    ComponentsModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent],
