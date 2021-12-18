@@ -16,6 +16,9 @@ import { ProductsComponent } from './products/products.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ProductsComponent
   ]
 })
 export class ViewsModule { }
