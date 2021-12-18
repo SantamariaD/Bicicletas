@@ -20,8 +20,13 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { appReducer } from './state';
+import { ViewsModule } from './views/views.module';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -31,6 +36,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot(appReducer, {
+      runtimeChecks: {
+        strictActionImmutability: false,
+        strictStateImmutability: false,
+      },
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, 
+      logOnly: environment.production, 
+      autoPause: true, 
+    }),
     BrowserAnimationsModule,
     MdbAccordionModule,
     MdbCarouselModule,
@@ -47,11 +63,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    ViewsModule,
     AppRoutingModule,
     ComponentsModule
  
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

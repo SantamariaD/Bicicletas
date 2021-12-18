@@ -15,6 +15,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ProductsComponent
   ]
 })
 export class ViewsModule { }
